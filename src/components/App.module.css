@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 26px;
+  font-family: sans-serif;
+}
+
+.container button {
+  margin: 5px;
+  padding: 5px 30px;
+  font-size: 18px;
+}
