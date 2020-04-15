@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Statistics = ({
@@ -7,16 +7,18 @@ const Statistics = ({
   bad,
   total,
   positivePercentage,
-  onLeaveFeedback
+  onLeaveFeedback,
 }) =>
   onLeaveFeedback ? (
-    <Fragment>
+    <>
+      <h2>Statistics</h2>
+
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
       <p>Total: {total}</p>
       <p>Positive feedback: {positivePercentage}%</p>
-    </Fragment>
+    </>
   ) : (
     <p>No feedback given</p>
   );
@@ -27,7 +29,7 @@ Statistics.propTypes = {
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
-  onLeaveFeedback: PropTypes.bool.isRequired
+  onLeaveFeedback: PropTypes.bool.isRequired,
 };
 
 export default Statistics;

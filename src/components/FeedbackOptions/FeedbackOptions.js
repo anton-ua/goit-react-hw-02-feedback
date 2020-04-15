@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const FeedbackOptions = ({ options }) => (
-  <Fragment>
+  <>
+    <h2>Please leave feedback</h2>
     <button type="button" onClick={options}>
       Good
     </button>
@@ -12,11 +13,11 @@ const FeedbackOptions = ({ options }) => (
     <button type="button" onClick={options}>
       Bad
     </button>
-  </Fragment>
+  </>
 );
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.func.isRequired
+  options: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
