@@ -13,15 +13,13 @@ export default class Counter extends Component {
     onLeaveFeedback: false,
   };
 
-  hadleIncrement = (e) => {
-    const currentFeedback = e.currentTarget.textContent.toLowerCase();
-
+  handleIncrement = (option) => {
     if (!this.onLeaveFeedback) {
       this.setState({ onLeaveFeedback: true });
     }
 
     this.setState((state) => ({
-      [currentFeedback]: state[currentFeedback] + 1,
+      [option]: state[option] + 1,
     }));
 
     this.countTotalFeedback();
@@ -52,10 +50,7 @@ export default class Counter extends Component {
 
     return (
       <div className={styles.container}>
-        <FeedbackOptions
-          options={this.hadleIncrement}
-          onLeaveFeedback={onLeaveFeedback}
-        />
+        <FeedbackOptions handleIncrement={this.handleIncrement} />
         <Statistics
           good={good}
           neutral={neutral}
